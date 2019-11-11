@@ -1,0 +1,1046 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Tines",
+		"_postman_id": "6a04109c-cb2a-706d-3e6c-eeb2eb3e5172",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"description": "",
+			"item": [
+				{
+					"name": "Users",
+					"description": "",
+					"item": [
+						{
+							"name": "List users",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/users",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get user",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/users/{{user-id}}",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a user",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/users/{{user-id}}",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a user",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/users",
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"first_name\": \"Joe\",\n\t\"last_name\": \"Bloggs\",\n\t\"Admin\": true,\n\t\"email\": \"joe@tines.xyz\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update a user",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/users/{{user-id}}",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"first_name\": \"New name\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get user signin activity",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/users/{{user-id}}/signin_activities",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Resend user invitation",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/users/{{user-id}}/resend_invitation",
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Job management",
+					"description": "",
+					"item": [
+						{
+							"name": "Agents",
+							"description": "",
+							"item": [
+								{
+									"name": "Delete all an agent's queued jobs",
+									"request": {
+										"url": "https://{{tenant-name}}/api/v1/admin/agents/{{agent-id}}/delete_all_queued_jobs",
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-USER-EMAIL",
+												"value": "{{email-address}}",
+												"description": ""
+											},
+											{
+												"key": "X-USER-TOKEN",
+												"value": "{{api-token}}",
+												"description": ""
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											}
+										],
+										"body": {},
+										"description": null
+									},
+									"response": []
+								},
+								{
+									"name": "Delete all an agent's dead jobs",
+									"request": {
+										"url": "https://{{tenant-name}}/api/v1/admin/agents/{{agent-id}}/delete_all_dead_jobs",
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-USER-EMAIL",
+												"value": "{{email-address}}",
+												"description": ""
+											},
+											{
+												"key": "X-USER-TOKEN",
+												"value": "{{api-token}}",
+												"description": ""
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											}
+										],
+										"body": {},
+										"description": null
+									},
+									"response": []
+								},
+								{
+									"name": "Delete all an agent's retry jobs",
+									"request": {
+										"url": "https://{{tenant-name}}/api/v1/admin/agents/{{agent-id}}/delete_all_dead_jobs",
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-USER-EMAIL",
+												"value": "{{email-address}}",
+												"description": ""
+											},
+											{
+												"key": "X-USER-TOKEN",
+												"value": "{{api-token}}",
+												"description": ""
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"description": ""
+											}
+										],
+										"body": {},
+										"description": null
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "List queued jobs",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/queued_jobs",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all queued jobs",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/delete_all_queued_jobs",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "List dead jobs",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/dead_jobs",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all dead jobs",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/delete_all_dead_jobs",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "List retry jobs",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/retry_jobs",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": null
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all retry jobs",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/delete_all_retry_jobs",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Agent Templates",
+					"description": "",
+					"item": [
+						{
+							"name": "List private templates",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/templates",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get a private template",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/templates/{{template-id}}",
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Create a private template",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/templates",
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test API Name\",\n    \"description\": \"test\",\n    \"agent_type\": \"Event Transformation\",\n    \"vendor\": \"API\",\n    \"product\": \"API\",\n    \"agent_options\": {\n        \"mode\": \"extract\",\n        \"matchers\": [\n            {\n                \"path\": \"{{.text}}\",\n                \"regexp\": \"\\\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,4}\\\\b\",\n                \"to\": \"email_addresses\"\n            },\n            {\n                \"path\": \"{{.text}}\",\n                \"regexp\": \"https?:\\\\/\\\\/[\\\\S]+\",\n                \"to\": \"urls\"\n            }\n        ],\n        \"message\": \"This is an optional message\"\n    }\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update a private template",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/templates/{{template-id}}",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Name+Update\",\n    \"description\": \"test+Update\",\n    \"agent_type\": \"Email\",\n    \"vendor\": \"API+Update\",\n    \"product\": \"AP+UpdateI\",\n    \"agent_options\": {\n        \"mode\": \"extract+Update\",\n        \"matchers\": [\n            {\n                \"path\": \"{{.text}}\",\n                \"regexp\": \"\\\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,4}\\\\b\",\n                \"to\": \"email_addresses\"\n            },\n            {\n                \"path\": \"{{.text}}\",\n                \"regexp\": \"https?:\\\\/\\\\/[\\\\S]+\",\n                \"to\": \"urls\"\n            }\n        ],\n        \"message\": \"This is an optional message+Update\"\n    }\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a private template",
+							"request": {
+								"url": "https://{{tenant-name}}/api/v1/admin/templates/{{template-id}}",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-USER-EMAIL",
+										"value": "{{email-address}}",
+										"description": ""
+									},
+									{
+										"key": "X-USER-TOKEN",
+										"value": "{{api-token}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Agents",
+			"description": "",
+			"item": [
+				{
+					"name": "Get agents",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Create event transformation agent",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\":\"Agents::EventTransformationAgent\",\n  \"name\": \"Agent created from API\",\n  \"story_id\":1,\n  \"keep_events_for\":604800,\n  \"source_ids\": [],\n  \"receiver_ids\":[],\n  \"options\":{\n    \"mode\": \"extract\",\n    \"matchers\": [\n      {\n        \"path\": \"{{.text}}\",\n        \"regexp\": \"\\\\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,4}\\\\b\",\n        \"to\": \"email_addresses\"\n      },\n      {\n        \"path\": \"{{.text}}\",\n        \"regexp\": \"https?:\\\\/\\\\/[\\\\S]+\",\n        \"to\": \"urls\"\n      }\n    ],\n    \"message\": \"This is an optional message\"\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update agent",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents/{{agent-id}}",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"New agent name\",\n  \"options\": {  \"mode\": \"message_only\",  \"message\": \"{% credential hi %}\"}\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get agent",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents/{{agent-id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete agent",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents/{{agent-id}}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Remove agent's events",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents/{{agent-id}}/remove_events",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Run agent",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents/{{agent-id}}/run",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Events Emitted by an Agent",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/agents/{{agent-id}}/events",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"description": "",
+			"item": [
+				{
+					"name": "Get event",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/events/{{event-id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get events",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/events",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get events with \"since\" parameter",
+					"request": {
+						"url": {
+							"raw": "https://{{tenant-name}}/api/v1/events?since_id={{event-id}}",
+							"protocol": "https",
+							"host": [
+								"{{tenant-name}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"events"
+							],
+							"query": [
+								{
+									"key": "since_id",
+									"value": "{{event-id}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stories",
+			"description": "",
+			"item": [
+				{
+					"name": "Export story",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/stories/{{story-id}}/export",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get stories",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/stories",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}"
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get story",
+					"request": {
+						"url": "https://{{tenant-name}}/api/v1/stories/{{story-id}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-USER-EMAIL",
+								"value": "{{email-address}}",
+								"description": ""
+							},
+							{
+								"key": "X-USER-TOKEN",
+								"value": "{{api-token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
